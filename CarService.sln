@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarService", "CarService\CarService.csproj", "{7F0AC1D6-8049-4155-8C4E-D7D8DE532751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarService", "CarService\CarService.csproj", "{7F0AC1D6-8049-4155-8C4E-D7D8DE532751}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D51EE001-E23F-4231-8ECC-65AA8B66767D} = {D51EE001-E23F-4231-8ECC-65AA8B66767D}
+		{FCE6FB5E-772B-42CE-B0DD-CA90F7A50667} = {FCE6FB5E-772B-42CE-B0DD-CA90F7A50667}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarService.Models", "CarService.Models\CarService.Models.csproj", "{D51EE001-E23F-4231-8ECC-65AA8B66767D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarService.BL", "CarService.BL\CarService.BL.csproj", "{FCE6FB5E-772B-42CE-B0DD-CA90F7A50667}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D51EE001-E23F-4231-8ECC-65AA8B66767D} = {D51EE001-E23F-4231-8ECC-65AA8B66767D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,14 @@ Global
 		{7F0AC1D6-8049-4155-8C4E-D7D8DE532751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F0AC1D6-8049-4155-8C4E-D7D8DE532751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F0AC1D6-8049-4155-8C4E-D7D8DE532751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51EE001-E23F-4231-8ECC-65AA8B66767D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51EE001-E23F-4231-8ECC-65AA8B66767D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51EE001-E23F-4231-8ECC-65AA8B66767D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51EE001-E23F-4231-8ECC-65AA8B66767D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCE6FB5E-772B-42CE-B0DD-CA90F7A50667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE6FB5E-772B-42CE-B0DD-CA90F7A50667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE6FB5E-772B-42CE-B0DD-CA90F7A50667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE6FB5E-772B-42CE-B0DD-CA90F7A50667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
