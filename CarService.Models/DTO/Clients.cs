@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CarService.Models.Enums;
+using System.Collections.Generic;
 
 namespace CarService.Models.DTO
 {
@@ -10,6 +11,6 @@ namespace CarService.Models.DTO
 
         public List<Cars> Car { get; set; }
 
-        public List<OrderItems> Order { get; set; }
+        public PaymentType PaymentType { get; set; }
     }
 }
