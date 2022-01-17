@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CarService.BL.Interfaces
 {
-    public interface IShiftService
+    public interface IShiftsService
     {
         Shift Create(Shift shift);
 
