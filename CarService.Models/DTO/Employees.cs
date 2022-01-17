@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CarService.Models.Enums;
+using System.Collections.Generic;
 
 namespace CarService.Models.DTO
 {
@@ -9,6 +10,8 @@ namespace CarService.Models.DTO
         public string Name { get; set; }
 
         public double MonthlySalary { get; set; }
+
+        public  PaymentType paymentType { get; set; }
     }
 }
 

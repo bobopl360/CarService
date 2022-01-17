@@ -12,5 +12,7 @@ namespace CarService.Models.DTO
         public List<Cars> Car { get; set; }
 
         public PaymentType PaymentType { get; set; }
+
+        public List<Service> Service { get; set; }
     }
 }

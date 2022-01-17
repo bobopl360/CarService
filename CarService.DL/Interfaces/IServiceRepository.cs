@@ -1,9 +1,9 @@
 ﻿using CarService.Models.DTO;
 using System.Collections.Generic;
 
-namespace CarService.BL.Interfaces
+namespace CarService.DL.InMemoryRepos
 {
-    public interface IOrderItemService
+    public interface IServiceRepository
     {
         Service Create(Service orderitem);
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarService.DL.InMemoryDb
+namespace CarService.DL.InMemoryRepos
 {
-    class OrderItemInMemoryCollection
+    class ServiceInMemoryRepository
     {
     }
 }
