@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarService.BL.Services
 {
-    class ShiftService
+    public class ShiftService
     {
     }
 }

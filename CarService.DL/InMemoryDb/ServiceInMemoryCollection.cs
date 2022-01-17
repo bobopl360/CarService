@@ -7,7 +7,7 @@ namespace CarService.DL.InMemoryDb
 {
     public class ServiceInMemoryCollection
     {
-        public static List<Service> OrderItemsDb = new List<Service>()
+        public static List<Service> ServiceItemsDb = new List<Service>()
         {
             new Service()
             {

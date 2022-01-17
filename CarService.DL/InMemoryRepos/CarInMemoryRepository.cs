@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CarService.DL.InMemoryRepos
 {
-    class CarInMemoryRepository : ICarRepository
+    public class CarInMemoryRepository : ICarRepository
     {
         public CarInMemoryRepository()
         {

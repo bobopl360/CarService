@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CarService.BL.Interfaces
 {
-    public interface IOrderItemService
+    public interface IServiceService
     {
         Service Create(Service orderitem);
 
