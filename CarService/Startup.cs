@@ -35,12 +35,12 @@ namespace CarService
             services.AddSingleton<ICarRepository, CarInMemoryRepository>();
             services.AddSingleton<IProductRepository, ProductInMemoryRepository>();
 
-            //services.AddSingleton<IShiftsService, ShiftService>();
-            //services.AddSingleton<ICarsService, CarService>();
+            services.AddSingleton<IShiftsService, ShiftService>();
+            services.AddSingleton<ICarsService, CarsService>();
             services.AddSingleton<IEmployeeService, EmployeeService>();
-            //services.AddSingleton<IClientService, ClientService>();
-            //services.AddSingleton<IProductsService, ProductService>();
-            //services.AddSingleton<IServiceService, ServiceService>();
+            services.AddSingleton<IClientService, ClientService>();
+            services.AddSingleton<IProductsService, ProductService>();
+            services.AddSingleton<IServiceService, ServiceService>();
 
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 

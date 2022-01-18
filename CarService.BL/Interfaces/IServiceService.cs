@@ -5,9 +5,9 @@ namespace CarService.BL.Interfaces
 {
     public interface IServiceService
     {
-        Service Create(Service orderitem);
+        Service Create(Service service);
 
-        Service Update(Service orderitem);
+        Service Update(Service service);
 
         Service Delete(int id);
 

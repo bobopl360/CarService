@@ -1,10 +1,47 @@
-﻿using System;
+﻿using CarService.BL.Interfaces;
+using CarService.DL.InMemoryRepos;
+using CarService.Models.DTO;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace CarService.BL.Services
 {
-    public class CarService
+    public class CarsService : ICarsService
     {
+        private readonly ICarRepository _carRepository;
+
+        public CarsService(ICarRepository carRepository)
+        {
+            _carRepository = carRepository;
+        }
+
+        public Cars Create(Cars cars)
+        {
+            var index = _carRepository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault()?.Id;
+
+            cars.Id = (int)(index != null ? index + 1 : 1);
+
+            return _carRepository.Create(cars);
+        }
+
+        public Cars Update(Cars cars)
+        {
+            return _carRepository.Update(cars);
+        }
+
+        public Cars Delete(int id)
+        {
+            return _carRepository.Delete(id);
+        }
+
+        public Cars GetById(int id)
+        {
+            return _carRepository.GetById(id);
+        }
+
+        public IEnumerable<Cars> GetAll()
+        {
+            return _carRepository.GetAll();
+        }
     }
 }
