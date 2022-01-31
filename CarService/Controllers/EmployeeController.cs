@@ -70,15 +70,17 @@ namespace CarService.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update([FromBody] Employees employees)
+        public IActionResult Update([FromBody] EmployeeUpdateRequest employeeRequest)
         {
-            if (employees == null) return BadRequest();
+            if (employeeRequest == null) return BadRequest();
 
-            var searchBill = _employeeService.GetById(employees.Id);
+            var searchEmployee = _employeeService.GetById(employeeRequest.Id);
 
-            if (searchBill == null) return NotFound(employees.Id);
+            if (searchEmployee == null) return NotFound(employeeRequest.Id);
+            
+            searchEmployee.Name = employeeRequest.Name;
 
-            var result = _employeeService.Update(employees);
+            var result = _employeeService.Update(searchEmployee);
 
             return Ok(result);
         }

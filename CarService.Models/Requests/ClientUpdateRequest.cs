@@ -1,8 +1,6 @@
 ﻿using CarService.Models.DTO;
 using CarService.Models.Enums;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CarService.Models.Requests
 {

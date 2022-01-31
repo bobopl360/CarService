@@ -70,15 +70,17 @@ namespace CarService.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update([FromBody] Clients client)
-        {
-            if (client == null) return BadRequest();
+        public IActionResult Update([FromBody] ClientUpdateRequest clientRequest)
+        { 
+            if (clientRequest == null) return BadRequest();
 
-            var searchClient = _clientService.GetById(client.Id);
+            var searchClient = _clientService.GetById(clientRequest.Id);
 
-            if (searchClient == null) return NotFound(client.Id);
+            if (searchClient == null) return NotFound(clientRequest.Id);
 
-            var result = _clientService.Update(client);
+            searchClient.Name = clientRequest.Name;
+
+            var result = _clientService.Update(searchClient);
 
             return Ok(result);
         }

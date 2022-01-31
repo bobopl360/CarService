@@ -66,15 +66,17 @@ namespace CarService.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update([FromBody] Products product)
+        public IActionResult Update([FromBody] ProductUpdateRequest productRequest)
         {
-            if (product == null) return BadRequest();
+            if (productRequest == null) return BadRequest();
 
-            var searchProduct = _productService.GetById(product.Id);
+            var searchProduct = _productService.GetById(productRequest.Id);
 
-            if (searchProduct == null) return NotFound(product.Id);
+            if (searchProduct == null) return NotFound(productRequest.Id);
 
-            var result = _productService.Update(product);
+            searchProduct.Name = productRequest.Name;
+
+            var result = _productService.Update(searchProduct);
 
             return Ok(result);
         }
