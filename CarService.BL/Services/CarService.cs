@@ -3,16 +3,19 @@ using CarService.DL.InMemoryRepos;
 using CarService.Models.DTO;
 using System.Collections.Generic;
 using System.Linq;
+using Serilog;
 
 namespace CarService.BL.Services
 {
     public class CarsService : ICarsService
     {
         private readonly ICarRepository _carRepository;
+        private readonly ILogger _logger;
 
-        public CarsService(ICarRepository carRepository)
+        public CarsService(ICarRepository carRepository, ILogger logger)
         {
             _carRepository = carRepository;
+            _logger = logger;
         }
 
         public Cars Create(Cars cars)
@@ -41,6 +44,7 @@ namespace CarService.BL.Services
 
         public IEnumerable<Cars> GetAll()
         {
+            
             return _carRepository.GetAll();
         }
     }

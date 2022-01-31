@@ -1,6 +1,7 @@
 ﻿using CarService.BL.Interfaces;
 using CarService.DL.InMemoryRepos;
 using CarService.Models.DTO;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,18 @@ namespace CarService.BL.Services
     public class ProductService : IProductsService
     {
         private readonly IProductRepository _productRepository;
+        private readonly ILogger _logger;
 
-        public ProductService(IProductRepository productRepository)
+        public ProductService(IProductRepository productRepository, ILogger logger)
         {
             _productRepository = productRepository;
+            _logger = logger;
         }
 
         public Products Create(Products product)
         {
+            var index = _productRepository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault()?.Id;
+            product.Id = (int)(index != null ? index + 1 : 1);
             return _productRepository.Create(product);
         }
 
@@ -39,11 +44,7 @@ namespace CarService.BL.Services
 
         public Products Update(Products product)
         {
-            var index = _productRepository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault()?.Id;
-
-            product.Id = (int)(index != null ? index + 1 : 1);
-
-            return _productRepository.Create(product);
+            return _productRepository.Update(product);
         }
     }
 }

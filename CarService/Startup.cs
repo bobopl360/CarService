@@ -1,6 +1,7 @@
 using CarService.BL.Interfaces;
 using CarService.BL.Services;
 using CarService.DL.InMemoryRepos;
+using CarService.Extensions;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -51,11 +52,12 @@ namespace CarService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarService", Version = "v1" });
             });
+
             services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger logger)
         {
             if (env.IsDevelopment())
             {
@@ -64,7 +66,7 @@ namespace CarService
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CarService v1"));
             }
 
-            //app.ConfigureExceptionHandler(logger);
+            app.ConfigureExceptionHandler(logger);
 
             app.UseHttpsRedirection();
 

@@ -70,15 +70,17 @@ namespace CarService.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update([FromBody] Service service)
+        public IActionResult Update([FromBody] ServiceUpdateRequest serviceRequest)
         {
-            if (service == null) return BadRequest();
+            if (serviceRequest == null) return BadRequest();
 
-            var searchService = _serviceService.GetById(service.Id);
+            var searchService = _serviceService.GetById(serviceRequest.Id);
 
-            if (searchService == null) return NotFound(service.Id);
+            if (searchService == null) return NotFound(serviceRequest.Id);
 
-            var result = _serviceService.Update(service);
+            searchService.Name = serviceRequest.Name;
+
+            var result = _serviceService.Update(searchService);
 
             return Ok(result);
         }

@@ -46,7 +46,7 @@ namespace CarService.Controllers
         }
 
         [HttpPost("Create")]
-        public IActionResult CreateBill([FromBody] CarsRequest carRequest)
+        public IActionResult CreateCar([FromBody] CarsRequest carRequest)
         {
             if (carRequest == null) return BadRequest();
 
@@ -70,15 +70,17 @@ namespace CarService.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Update([FromBody] Cars cars)
+        public IActionResult Update([FromBody] CarsUpdateRequest carsRequest)
         {
-            if (cars == null) return BadRequest();
+            if (carsRequest == null) return BadRequest();
 
-            var searchBill = _carService.GetById(cars.Id);
+            var searchCar = _carService.GetById(carsRequest.Id);
 
-            if (searchBill == null) return NotFound(cars.Id);
+            if (searchCar == null) return NotFound(carsRequest.Id);
+            
+            searchCar.Make = carsRequest.Make;
 
-            var result = _carService.Update(cars);
+            var result = _carService.Update(searchCar);
 
             return Ok(result);
         }

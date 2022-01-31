@@ -18,9 +18,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarService.BL", "CarService
 		{A751047B-5CE8-47D2-9290-3588EA58C37F} = {A751047B-5CE8-47D2-9290-3588EA58C37F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarService.DL", "CarService.DL\CarService.DL.csproj", "{A751047B-5CE8-47D2-9290-3588EA58C37F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarService.DL", "CarService.DL\CarService.DL.csproj", "{A751047B-5CE8-47D2-9290-3588EA58C37F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D51EE001-E23F-4231-8ECC-65AA8B66767D} = {D51EE001-E23F-4231-8ECC-65AA8B66767D}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarService.Test", "CarService.Test\CarService.Test.csproj", "{A9AEA145-0BF5-451E-ABFA-4118ECDD56CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F0AC1D6-8049-4155-8C4E-D7D8DE532751} = {7F0AC1D6-8049-4155-8C4E-D7D8DE532751}
 	EndProjectSection
 EndProject
 Global
@@ -45,6 +50,10 @@ Global
 		{A751047B-5CE8-47D2-9290-3588EA58C37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A751047B-5CE8-47D2-9290-3588EA58C37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A751047B-5CE8-47D2-9290-3588EA58C37F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AEA145-0BF5-451E-ABFA-4118ECDD56CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AEA145-0BF5-451E-ABFA-4118ECDD56CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AEA145-0BF5-451E-ABFA-4118ECDD56CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AEA145-0BF5-451E-ABFA-4118ECDD56CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
