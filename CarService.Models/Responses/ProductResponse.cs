@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CarService.Models.Responses
+﻿namespace CarService.Models.Responses
 {
     public class ProductResponse
     {

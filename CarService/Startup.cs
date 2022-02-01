@@ -45,9 +45,7 @@ namespace CarService
 
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
-            //services.AddMvcCore().AddApiExplorer();
-            //services.AddRazorPages();
-
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarService", Version = "v1" });
