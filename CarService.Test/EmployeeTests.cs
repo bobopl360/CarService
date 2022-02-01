@@ -10,12 +10,9 @@ using CarService.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Serilog;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace CarService.Test
@@ -57,7 +54,7 @@ namespace CarService.Test
 
             var logger = new Mock<ILogger>();
 
-            _employeeService = new EmployeeService(_employeeRepository.Object);
+            _employeeService = new EmployeeService(_employeeRepository.Object, logger.Object);
             _employeeController = new EmployeeController(_employeeService, _mapper);
 
         }

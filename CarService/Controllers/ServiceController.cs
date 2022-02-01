@@ -4,10 +4,6 @@ using CarService.Models.DTO;
 using CarService.Models.Requests;
 using CarService.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarService.Controllers
 {
